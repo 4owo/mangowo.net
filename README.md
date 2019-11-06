@@ -54,7 +54,7 @@ Done. You've just created a website! Browse <http://localhost:8080/> and watch
 the example pages which have been created during initialization. To write your
 own pages, use the example pages in the *input* folder as a starting point.
 
-Next to the *miniaml* theme, there are some other [choices available][themes].
+Next to the *minimal* theme, there are some other [choices available][themes].
 
 Run `poole --build` whenever you've made some changes in the *input* folder.
 
