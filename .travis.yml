@@ -3,7 +3,5 @@ python:
   - "3.2"
   - "3.3"
   - "3.6"
-install:
-  - "pip install markdown"
 script:
-  - "cd tests && python run.py"
+  - "make test"

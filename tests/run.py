@@ -7,7 +7,7 @@ import sys
 import glob
 
 HERE = os.path.dirname(__file__)
-POOLE = os.path.join(HERE, "..", "poole.py")
+POOLE = os.path.join(HERE, "..", "poole")
 ACTUAL = os.path.join(HERE, "actual")
 EXPECTED = os.path.join(HERE, "expected")
 ERRORS = os.path.join(HERE, "errors.diff")

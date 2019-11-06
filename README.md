@@ -27,38 +27,28 @@ yours).
 [travis-url]: https://travis-ci.org/obensonne/poole
 [travis-img]: https://travis-ci.org/obensonne/poole.png?branch=master "Build status"
 
-## Requirements
-
-**You** should know Markdown and optionally Python if you want to use Poole's
-dirty content generation capability.
-
-**Your system** should have installed Python ≥ 3.2 and [python-markdown][pymd].
-Poole has been tested on Linux but should also work on other Unix systems and
-Windows (in theory, [report an issue][issues] if it fails).
-
 [markdown]: http://daringfireball.net/projects/markdown/
 [pymd]: https://pypi.python.org/pypi/Markdown
 
 ## Getting Started
 
-Clone or download ([zip][zip], [tgz][tgz]) the repository and then put
-*poole.py* to your *PATH*:
+Clone or download ([tgz][tgz]) the repository, run `make` to set up a virtual
+env, then make Poole easily runnable via an alias:
 
-    $ hg clone http://bitbucket.org/obensonne/poole/ /some/where/poole
-    $ export PATH=$PATH:/some/where/poole
+    $ hg clone https://hg.sr.ht/~obensonne/poole /some/where/poole
+    $ cd /some/where/poole
+    $ make
+    $ alias poole=/some/where/poole/poole
 
 **TIP**: You might want to add the last command to your `~/.bashrc`.
-
-**Python3**: Download the packages from the *py3* branch ([zip][zip3],
-[tgz][tgz3]) or check out the *py3* branch when cloned.
 
 Create and build a site project:
 
     $ mkdir /path/to/site/project
     $ cd /path/to/site/project
-    $ poole.py --init --theme minimal
-    $ poole.py --build
-    $ poole.py --serve
+    $ poole --init --theme minimal
+    $ poole --build
+    $ poole --serve
 
 Done. You've just created a website! Browse <http://localhost:8080/> and watch
 the example pages which have been created during initialization. To write your
@@ -66,12 +56,9 @@ own pages, use the example pages in the *input* folder as a starting point.
 
 Next to the *miniaml* theme, there are some other [choices available][themes].
 
-Run `poole.py --build` whenever you've made some changes in the *input* folder.
+Run `poole --build` whenever you've made some changes in the *input* folder.
 
-[zip]: http://bitbucket.org/obensonne/poole/get/default.zip
-[tgz]: http://bitbucket.org/obensonne/poole/get/default.tar.gz
-[zip3]: https://bitbucket.org/obensonne/poole/get/py3.zip
-[tgz3]: http://bitbucket.org/obensonne/poole/get/py3.tar.gz
+[tgz]: https://hg.sr.ht/~obensonne/poole/archive/tip.tar.gz
 [themes]: https://bitbucket.org/obensonne/poole/wiki/Themes
 
 ## How It Works
@@ -297,18 +284,6 @@ embedded Python code and within the *macros* module:
 
 [pyopts]: http://docs.python.org/library/optparse.html
 
-### Character encodings
-
-In case you use non-ASCII characters, check the *encoding* options of Poole. In
-most cases working with non-ASCII strings should work straight forward if the
-options are set properly (default is *UTF-8*).
-
-However, be aware that page variables defined within page source files and
-derived from a page's file name internally are handled as Python *unicode*
-objects. That means if you want to refer to non-ASCII page variable names and
-values form within embedded Python code or from `macros.py`, make sure to use
-*unicode* strings to reference them.
-
 ### Custom file converters
 
 If you use [LESS][] or [CleverCSS][] you'll be happy about the possibility to
@@ -388,6 +363,5 @@ file. Check out the [example recipes][recipes].
 
 ## Feedback
 
-Please use the [issue tracker][issues].
+Please use the mailing list at https://lists.sr.ht/~obensonne/poole
 
-[issues]: http://bitbucket.org/obensonne/poole/issues/

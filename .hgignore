@@ -1,4 +1,7 @@
 syntax: glob
+env/
+bin/
+poole
 tests/actual
 tests/errors.diff
 *.pyc
