@@ -363,5 +363,7 @@ file. Check out the [example recipes][recipes].
 
 ## Feedback
 
-Please use the mailing list at https://lists.sr.ht/~obensonne/poole
+Please use the mailing list at https://lists.sr.ht/~obensonne/poole for patches
+and general questions.  There is also an issue tracker at
+https://todo.sr.ht/~obensonne/poole.
 
