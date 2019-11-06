@@ -6,7 +6,7 @@
 *Posted at
 <!--%
 from datetime import datetime
-print datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y")
+print(datetime.strptime(page["date"], "%Y-%m-%d").strftime("%B %d, %Y"))
 %-->*
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed pretium arcu.
