@@ -15,7 +15,7 @@ done fast and easy -- if you know Python you're ready to start.
 Check the list of [sites built with Poole][examples] (and feel free to add
 yours).
 
-[examples]: https://bitbucket.org/obensonne/poole/wiki/Home
+[examples]: ./docs/sites.md
 
 [markdown]: http://daringfireball.net/projects/markdown/
 [pymd]: https://pypi.python.org/pypi/Markdown
@@ -49,7 +49,7 @@ Next to the *minimal* theme, there are some other [choices available][themes].
 Run `poole --build` whenever you've made some changes in the *input* folder.
 
 [tgz]: https://hg.sr.ht/~obensonne/poole/archive/tip.tar.gz
-[themes]: https://bitbucket.org/obensonne/poole/wiki/Themes
+[themes]: ./docs/themes.md
 
 ## How It Works
 
@@ -349,7 +349,7 @@ You can do some pretty fancy and useful things with inlined Python code and
 the macros module, for instance generate a list of blog posts or create an RSS
 file. Check out the [example recipes][recipes].
 
-[recipes]: https://bitbucket.org/obensonne/poole/wiki/Recipes
+[recipes]: ./docs/recipes.md
 
 ## Feedback
 
