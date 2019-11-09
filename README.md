@@ -15,7 +15,7 @@ done fast and easy -- if you know Python you're ready to start.
 Check the list of [sites built with Poole][examples] (and feel free to add
 yours).
 
-[examples]: ./docs/sites.md
+[examples]: https://man.sr.ht/~obensonne/poole/sites.md
 
 [markdown]: http://daringfireball.net/projects/markdown/
 [pymd]: https://pypi.python.org/pypi/Markdown
@@ -49,7 +49,7 @@ Next to the *minimal* theme, there are some other [choices available][themes].
 Run `poole --build` whenever you've made some changes in the *input* folder.
 
 [tgz]: https://hg.sr.ht/~obensonne/poole/archive/tip.tar.gz
-[themes]: ./docs/themes.md
+[themes]: https://hg.sr.ht/~obensonne/poole/browse/default/themes
 
 ## How It Works
 
@@ -116,7 +116,7 @@ property `tempalte` in the front matter of each page:
 In that case the given file is used as the page template instead of the default
 `page.html` file.
 
-[pimp]: http://obensonne.bitbucket.org/blog/20091122-using-a-free-css-templates-in-poole.html
+[pimp]: http://obensonne.com/blog/20091122-using-a-free-css-templates-in-poole.html
 
 ## Content Generation
 
@@ -186,6 +186,10 @@ Currently, there is only one builtin macro available.
 > Note that `"` is not special in most HTML, only within attributes.
 > However, since escaping it does not hurt within normal HTML, it is
 > just escaped unconditionally.
+
+The [wiki goes a bit more into detail on macros][macros].
+
+[macros]: https://man.sr.ht/~obensonne/poole/macros.md
 
 ### Working with pages
 
@@ -349,7 +353,7 @@ You can do some pretty fancy and useful things with inlined Python code and
 the macros module, for instance generate a list of blog posts or create an RSS
 file. Check out the [example recipes][recipes].
 
-[recipes]: ./docs/recipes.md
+[recipes]: https://man.sr.ht/~obensonne/poole/recipes.md
 
 ## Feedback
 
