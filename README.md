@@ -358,9 +358,9 @@ file. Check out the [example recipes][recipes].
 
 [recipes]: https://man.sr.ht/~obensonne/poole/recipes.md
 
-## Feedback
+## Feedback and Contributions
 
 Please use the mailing list at https://lists.sr.ht/~obensonne/poole for patches
-and general questions.  There is also an issue tracker at
-https://todo.sr.ht/~obensonne/poole.
+and general questions. No idea how to contribute via a mailing list? [Read
+this !](https://man.sr.ht/hg.sr.ht/email.md).
 
