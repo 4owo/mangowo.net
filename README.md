@@ -15,6 +15,9 @@ done fast and easy -- if you know Python you're ready to start.
 Check the list of [sites built with Poole][examples] (and feel free to add
 yours).
 
+[![builds.sr.ht status](https://builds.sr.ht/~obensonne/poole.svg)](https://builds.sr.ht/~obensonne/poole?)
+
+
 [examples]: https://man.sr.ht/~obensonne/poole/sites.md
 
 [markdown]: http://daringfireball.net/projects/markdown/
