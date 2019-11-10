@@ -7,7 +7,10 @@ import sys
 import glob
 
 HERE = os.path.dirname(__file__)
-POOLE = os.path.join(HERE, "..", "poole")
+POOLE = [
+    os.path.join(HERE, "..", "env", "bin", "python"),
+    os.path.join(HERE, "..", "poole.py"),
+]
 ACTUAL = os.path.join(HERE, "actual")
 EXPECTED = os.path.join(HERE, "expected")
 ERRORS = os.path.join(HERE, "errors.diff")
@@ -20,9 +23,9 @@ if os.path.exists(ACTUAL):
 if os.path.exists(ERRORS):
     os.remove(ERRORS)
 
-cmd_init = [POOLE, ACTUAL, "--init"]
-cmd_build_dry_run = [POOLE, ACTUAL, "--build", "--dry-run"]
-cmd_build = [POOLE, ACTUAL, "--build"]
+cmd_init = POOLE + [ACTUAL, "--init"]
+cmd_build_dry_run = POOLE + [ACTUAL, "--build", "--dry-run"]
+cmd_build = POOLE + [ACTUAL, "--build"]
 cmd_diff = ["diff", "-Naur", EXPECTED, ACTUAL]
 
 r = subprocess.call(cmd_init, stdout=subprocess.PIPE)

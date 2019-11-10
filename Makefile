@@ -1,10 +1,11 @@
-APP := poole
-
+# =============================================================================
+# Make file for development and testing poole
+#
+# You most likely will run poole.py in your own virtual env.
 # =============================================================================
 
 export LC_ALL := en_US.UTF-8
-
-VIRTUALENV := virtualenv --python=python3
+export PYTHONIOENCODING := UTF-8:replace
 
 HERE:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
@@ -16,46 +17,29 @@ HERE:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 .PHONY: clean
 clean:
-	rm *.pyc
+	rm -f *.pyc
 	touch requirements.txt
-	rm -f env/_done_*
 
 .PHONY: distclean
 distclean: clean
-	rm -f bin
 	rm -rf env
 
 # =============================================================================
-# build
+# build virtual environment
 # =============================================================================
 
 env/bin/python:
-	$(VIRTUALENV) env
+	python3 -m venv env
 
-env/_done_requirements: requirements.txt
+env/_requirements: requirements.txt
+	env/bin/pip install --upgrade pip
 	env/bin/pip install -U -r requirements.txt
 	touch $@
 
-bin:
-	ln -s env/bin
-
-.PHONY: env
-env: env/bin/python bin
-env: env/_done_requirements
-
-define POOLE_BIN
-#!/bin/bash
-
-$(HERE)/env/bin/python $(HERE)/poole.py $$@
-endef
-export POOLE_BIN
-
-poole: poole.py Makefile
-	@echo "$$POOLE_BIN" > $@
-	chmod +x poole
-
 .PHONY: build
-build: env poole
+build: ## build everything needed to run tests and deploy releases
+build: env/bin/python env/_requirements
+
 
 # =============================================================================
 # tests

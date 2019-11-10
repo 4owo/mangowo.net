@@ -28,7 +28,7 @@ env, then make Poole easily runnable via an alias:
     $ hg clone https://hg.sr.ht/~obensonne/poole /some/where/poole
     $ cd /some/where/poole
     $ make
-    $ alias poole=/some/where/poole/poole
+    $ alias poole=/some/where/poole/poole.py
 
 **TIP**: You might want to add the last command to your `~/.bashrc`.
 
