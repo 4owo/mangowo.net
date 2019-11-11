@@ -24,7 +24,8 @@
 # =============================================================================
 
 import glob
-import imp
+import importlib
+import importlib.util
 import optparse
 import os
 from os.path import join as opj
@@ -519,7 +520,15 @@ def build(project, opts):
 
     # macro module
     fname = opj(opts.project, "macros.py")
-    macros = imp.load_source("macros", fname).__dict__ if opx(fname) else {}
+    if os.path.exists(fname):
+        module_name, fname = "macros", opj(opts.project, "macros.py")
+        spec = importlib.util.spec_from_file_location(module_name, fname)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[module_name] = module
+        spec.loader.exec_module(module)
+        macros = module.__dict__ if opx(fname) else {}
+    else:
+        macros = {}
 
     macros["options"] = opts
     macros["project"] = project
