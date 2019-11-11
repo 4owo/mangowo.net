@@ -8,7 +8,7 @@ import glob
 
 HERE = os.path.dirname(__file__)
 POOLE = [
-    os.path.join(HERE, "..", "env", "bin", "python"),
+    os.path.join(HERE, "..", "env", "bin", sys.executable),
     os.path.join(HERE, "..", "poole.py"),
 ]
 ACTUAL = os.path.join(HERE, "actual")
