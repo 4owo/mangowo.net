@@ -520,13 +520,12 @@ def build(project, opts):
 
     # macro module
     fname = opj(opts.project, "macros.py")
-    if os.path.exists(fname):
-        module_name, fname = "macros", opj(opts.project, "macros.py")
-        spec = importlib.util.spec_from_file_location(module_name, fname)
+    if opx(fname):
+        spec = importlib.util.spec_from_file_location("macros", fname)
         module = importlib.util.module_from_spec(spec)
-        sys.modules[module_name] = module
+        sys.modules["macros"] = module
         spec.loader.exec_module(module)
-        macros = module.__dict__ if opx(fname) else {}
+        macros = module.__dict__
     else:
         macros = {}
 
